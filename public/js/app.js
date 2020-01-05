@@ -7,7 +7,7 @@ const locationInfo = document.querySelector('#location-info')
 weatherForm.addEventListener('submit', (e) => {
 	e.preventDefault();
 	debugger	
-	fetch('http://localhost:3000/weather?address='+encodeURI(address.value)).then((response) => {
+	fetch('/weather?address='+encodeURI(address.value)).then((response) => {
 		response.json().then((data) => {
 			if (data.error) {
 				alert(JSON.stringify(data.error))

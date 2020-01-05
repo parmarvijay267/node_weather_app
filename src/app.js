@@ -5,6 +5,9 @@ const geocode = require('../utils/geocode.js')
 const forecast = require('../utils/forecast.js')
 
 const app = express()
+const port = process.env.PORT || 3000
+
+//Add static paths
 const viewsPath = path.join(__dirname, '../templates/views')
 const staticAssetsPath = path.join(__dirname, '../public')
 const partialsPath = path.join(__dirname, '../templates/partials')
@@ -52,4 +55,6 @@ app.get('/*', (req, res) => {
     res.send('Under development... Try agin later...')
 })
 
-app.listen(3000)
+app.listen(port, () => {
+    console.log('Server is up and running on + port')
+})
